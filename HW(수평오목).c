@@ -5,7 +5,7 @@ int winCheck (char b[][BOARD_SIZE], int r, int c)
 	int j;
 	int count = 0;
 
-	for (j = 0; j < BOARD_SIZE; j++){
+	for (j = 0; j < BOARD_SIZE; j++){ //j = 0부터 볼 필요 없음, 오목판이 커지면 비효율적// 내가 놓은 말 왼쪽 오른쪽 보기
 		if (b[r][j] == 'X' && c <= 5){ //X의 경우//경우 나눌 필요 없고'X'대신 b[r][c]이렇게 쓰면 코드 줄일 수 있음
 			while(count < 5) {
 				if (b[r][j++] == 'X')
