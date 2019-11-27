@@ -6,7 +6,7 @@ int winCheck (char b[][BOARD_SIZE], int r, int c)
 	int count = 0;
 
 	for (j = 0; j < BOARD_SIZE; j++){
-		if (b[r][j] == 'X' && c <= 5){ //XÀÇ °æ¿ì
+		if (b[r][j] == 'X' && c <= 5){ //Xì˜ ê²½ìš°//ê²½ìš° ë‚˜ëˆŒ í•„ìš” ì—†ê³ 'X'ëŒ€ì‹  b[r][c]ì´ë ‡ê²Œ ì“°ë©´ ì½”ë“œ ì¤„ì¼ ìˆ˜ ìžˆìŒ
 			while(count < 5) {
 				if (b[r][j++] == 'X')
 					count++;
@@ -18,7 +18,7 @@ int winCheck (char b[][BOARD_SIZE], int r, int c)
 			count = 0;
 			return 0;
 		}
-		else if (b[r][j] == 'O' && c <= 5){ //OÀÇ °æ¿ì
+		else if (b[r][j] == 'O' && c <= 5){ //Oì˜ ê²½ìš°
 			while(count < 5) {
 				if (b[r][j++] == 'O')
 					count++;
@@ -41,7 +41,7 @@ void display(char b[][BOARD_SIZE])
 	
 	printf("     "); 
 	for (i= 0; i< BOARD_SIZE; i++) 
-		printf("%2d", i); //°¡·Î·Î Â÷±ÙÈ÷ ÇÁ¸°Æ®
+		printf("%2d", i); //ê°€ë¡œë¡œ ì°¨ê·¼ížˆ í”„ë¦°íŠ¸
 	printf("\n     ---------------------\n");
 	
 	for (i= 0; i< BOARD_SIZE; i++) 
@@ -62,12 +62,12 @@ void main()
 
 	for(i = 0; i< BOARD_SIZE ; i++ ) 
 		for(j = 0 ; j < BOARD_SIZE ; j++)
-			board[i][j] = ' '; //* + °¡·Î·Î ÇÁ¸°Æ®
+			board[i][j] = ' '; //* + ê°€ë¡œë¡œ í”„ë¦°íŠ¸
 
 	count = 1;
 	display(board); 
 
-	printf("Player %c(Çà¿­):", turn); 
+	printf("Player %c(í–‰ì—´):", turn); 
 	scanf("%d %d", &r, &c);
 	while(count <= BOARD_SIZE * BOARD_SIZE)
 	{
@@ -86,7 +86,7 @@ void main()
 			}
 		}
 		else {
-			 printf("Player %c(Çà¿­):", turn); 
+			 printf("Player %c(í–‰ì—´):", turn); 
 			scanf("%d %d", &r, &c);
 		}
 	}
